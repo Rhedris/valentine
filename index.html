@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Valentine</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+</head>
+
+
+
+<body>
+    <img src="cat.gif" style="width: 150px;">
+    <div id="Valentine">
+        <h1>Will you be my Valentine?</h1>
+    </div>
+    <div class="buttons">
+        <div class="yes">
+            <a href="yes.html"><button style="background-color: green; border: transparent; color: white;">Yes</button></a>
+        </div>
+        <div class="no">
+            <button id="noButton" style="background-color: red; border: transparent; color: white;">No</button>
+        </div>
+    </div>
+
+    <script>
+        const yesButton = document.querySelector('.yes button');
+        const noButton = document.getElementById('noButton');
+
+        noButton.addEventListener('click', function() {
+            const yesButtonStyles = getComputedStyle(yesButton);
+            const currentPadding = parseInt(yesButtonStyles.padding);
+            const newPadding = currentPadding + 30;
+            yesButton.style.padding = newPadding + 'px';
+        });
+    </script>
+</body>
+</html>
